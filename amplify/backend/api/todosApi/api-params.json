@@ -1,0 +1,44 @@
+{
+    "paths": [
+        {
+            "name": "/todos",
+            "lambdaFunction": "todosLambda",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            }
+        }
+    ],
+    "resourceName": "todosApi",
+    "apiName": "todosApi",
+    "functionArns": [
+        {
+            "lambdaFunction": "todosLambda"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-awsamplifyapp-vuedev-25822-authRole",
+        "unAuthRoleName": "amplify-awsamplifyapp-vuedev-25822-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "todosLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
